@@ -1,5 +1,6 @@
 package main
 
+//import packages
 import (
 	"encoding/json"
 	"net/http"
@@ -7,14 +8,25 @@ import (
 	"github.com/gorilla/mux"
 )
 
+/*
+Get all cities
+Takes no parameters
+*/
 func getCitys(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(citys)
 }
+
+/*
+Get single city
+Takes city name as parameter
+Return city
+If city is not exist return failure
+*/
 func getCity(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	params := mux.Vars(r) // Gets params
-	// Loop through books and find one with the id from the params
+	// Loop through citys and find one with the name from the params
 	for _, item := range citys {
 		if item.Name == params["name"] {
 			var response Response
@@ -28,6 +40,13 @@ func getCity(w http.ResponseWriter, r *http.Request) {
 	status.Status = "failure"
 	json.NewEncoder(w).Encode(status)
 }
+
+/*
+Add new city
+Takes city struct as parametre
+Return Response struct {success and city}
+If city is exist return failure
+*/
 func createCity(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	var city City
@@ -40,11 +59,16 @@ func createCity(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 	}
-	//city.Name = strconv.Itoa(rand.Intn(100000000)) // Mock ID - not safe
 	citys = append(citys, city)
 	json.NewEncoder(w).Encode(city)
 }
 
+/*
+Update city
+Takes city name and city struct as parametre
+Return Response struct {success and city}
+If city is not exist return failure
+*/
 func updateCity(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	params := mux.Vars(r)
@@ -68,7 +92,11 @@ func updateCity(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(status)
 }
 
-// Delete book
+/*
+Delete city
+Return cities
+If city is not exist return failure
+*/
 func deleteCity(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	params := mux.Vars(r)
