@@ -1,0 +1,505 @@
+{
+	"info": {
+		"_postman_id": "5f3c5478-96e5-4b8f-9535-557540616d77",
+		"name": "Evatro-Go",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Citys",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/citys",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"citys"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Citys",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/citys",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"citys"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 28 May 2022 09:45:27 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "195"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"name\": \"Istanbul\",\n        \"temperature\": \"8\",\n        \"unit\": \"8\"\n    },\n    {\n        \"name\": \"Prag\",\n        \"temperature\": \"10\",\n        \"unit\": \"8\"\n    },\n    {\n        \"name\": \"Los Angeles\",\n        \"temperature\": \"9\",\n        \"unit\": \"8\"\n    },\n    {\n        \"name\": \"Kiev\",\n        \"temperature\": \"-5\",\n        \"unit\": \"8\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get City {Name}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/citys/Istanbul",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"citys",
+						"Istanbul"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get City {Name} -Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/citys/Istanbul",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"citys",
+								"Istanbul"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 28 May 2022 09:46:25 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "77"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"city\": {\n        \"name\": \"Istanbul\",\n        \"temperature\": \"8\",\n        \"unit\": \"8\"\n    }\n}"
+				},
+				{
+					"name": "Get City {Name} - Failure",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/citys/Istanbula",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"citys",
+								"Istanbula"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 28 May 2022 09:46:45 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "21"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"failure\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Post City",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"name\": \"kuala lumpur\",\r\n    \"temperature\": \"12\",\r\n    \"unit\": \"celcius\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/citys",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"citys"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Post City - Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"name\": \"kuala lumpur\",\r\n    \"temperature\": \"12\",\r\n    \"unit\": \"celcius\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/citys",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"citys"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 28 May 2022 09:54:57 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "60"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"kuala lumpur\",\n    \"temperature\": \"12\",\n    \"unit\": \"celcius\"\n}"
+				},
+				{
+					"name": "Post City - Failure",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"name\": \"kuala lumpur\",\r\n    \"temperature\": \"12\",\r\n    \"unit\": \"celcius\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/citys",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"citys"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 28 May 2022 09:55:28 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"kuala lumpur city is exist\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Put City {Name}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"name\": \"Istanbul\",\r\n    \"temperature\": \"8\",\r\n    \"unit\": \"celcius\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/citys/Istanbula",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"citys",
+						"Istanbula"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Put City {Name} - Success",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"name\": \"Istanbul\",\r\n    \"temperature\": \"8\",\r\n    \"unit\": \"celcius\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/citys/Istanbul",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"citys",
+								"Istanbul"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 28 May 2022 09:58:42 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "83"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"city\": {\n        \"name\": \"Istanbul\",\n        \"temperature\": \"8\",\n        \"unit\": \"celcius\"\n    }\n}"
+				},
+				{
+					"name": "Put City {Name} - Failure",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"name\": \"Istanbul\",\r\n    \"temperature\": \"8\",\r\n    \"unit\": \"celcius\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/citys/Istanbula",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"citys",
+								"Istanbula"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 28 May 2022 09:59:31 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Istanbula city is not exist\"\n}"
+				}
+			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/citys/Istanbul",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"citys",
+						"Istanbul"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete City {Name} - Success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/citys/Istanbul",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"citys",
+								"Istanbul"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 28 May 2022 10:00:27 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "206"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"name\": \"Prag\",\n        \"temperature\": \"10\",\n        \"unit\": \"8\"\n    },\n    {\n        \"name\": \"Los Angeles\",\n        \"temperature\": \"9\",\n        \"unit\": \"8\"\n    },\n    {\n        \"name\": \"Kiev\",\n        \"temperature\": \"-5\",\n        \"unit\": \"8\"\n    },\n    {\n        \"name\": \"kuala lumpur\",\n        \"temperature\": \"12\",\n        \"unit\": \"celcius\"\n    }\n]"
+				},
+				{
+					"name": "Delete City {Name} - Failure",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/citys/Istanbul",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"citys",
+								"Istanbul"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 28 May 2022 10:01:10 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Istanbul city is not exist\"\n}"
+				}
+			]
+		}
+	]
+}
