@@ -72,7 +72,7 @@ http://localhost:8000/citys/Istanbul
 # }
 ```
 
-### Delete Book
+### Delete City
 
 ```sh
 http://localhost:8000/citys/Istanbul
